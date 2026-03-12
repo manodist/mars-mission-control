@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  --color-terminal-bg: #0c0c0e;
+  --font-cyber: "Black Han Sans", system-ui;
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-sans: "Pretendard", system-ui;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+
+  @supports (scrollbar-width: none) {
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  /* Chrome/Safari fallback handled by ::-webkit-scrollbar */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Base styles */
+@layer base {
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-terminal-bg);
+    color: white;
+    overflow: hidden;
+    /* Prevent body scroll as app handles layout */
+    overscroll-behavior: none;
+  }
+
+  .no-scroll {
+    overscroll-behavior: none;
+    touch-action: none;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}
+
+@keyframes scrolling-bg {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+@utility animate-scrolling-bg {
+  animation: scrolling-bg 20s linear infinite;
+}
+
+@utility bg-star-field {
+  background-image:
+    radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 3px),
+    radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 2px),
+    radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 3px);
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+}
+
+@utility glow-text-cyan {
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.8), 0 0 20px rgba(34, 211, 238, 0.4);
+}
+
+@utility glow-text-orange {
+  text-shadow: 0 0 10px rgba(249, 115, 22, 0.8), 0 0 20px rgba(249, 115, 22, 0.4);
+}
+
+@utility font-cyber {
+  font-family: var(--font-cyber);
+}
+
+@utility font-orbitron {
+  font-family: var(--font-orbitron);
+}
+
+@utility font-pretendard {
+  font-family: var(--font-sans);
+}
+
+@utility bg-grid {
+  background-image: linear-gradient(rgba(0, 209, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 209, 255, 0.3) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+@layer components {
+  .terminal-panel {
+    @apply rounded-3xl border border-white/10 bg-[#0c0c0e]/80 backdrop-blur-xl relative overflow-hidden;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .terminal-panel::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none opacity-[0.03];
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+  }
+
+  .scanline {
+    @apply absolute inset-0 pointer-events-none w-full h-full z-50;
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(0, 255, 255, 0.05) 50%,
+        transparent 100%);
+    background-size: 100% 200%;
+    animation: scanline 8s linear infinite;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@utility text-shadow-glow {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(139, 92, 246, 0.2);
+}

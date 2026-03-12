@@ -1,0 +1,29 @@
+{
+  "name": "DeepReading: 화성 탐사 미션 컨트롤",
+  "short_name": "스페이스 러너",
+  "description": "딥독 융합 논술과 함께하는 화성 탐사 미션! 문해력과 사고력을 키우는 에듀테크 게임.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/inblanq.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

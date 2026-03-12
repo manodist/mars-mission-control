@@ -1,0 +1,25 @@
+top-4 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-cyan-500 border border-white/30 shadow-inner">
+                                                            <div className="w-full h-full bg-gradient-to-tr from-cyan-300 to-transparent animate-pulse" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Rocket Exhaust Plume */}
+                                <div className="absolute top-[96%] left-1/2 -translate-x-1/2 w-48 h-20 pointer-events-none z-0">
+                                    {/* Triple Flame Layout */}
+                                    <div className="absolute inset-x-0 top-0 flex justify-center gap-4">
+                                        {/* Left Sub Burner */}
+                                        <div className="relative w-8 h-20 opacity-70 scale-90">
+                                            <motion.div
+                                                animate={{
+                                                    height: isAscending ? [40, 100, 40] : [8, 20, 8],
+                                                    opacity: [0.6, 0.9, 0.6],
+                                                    width: isAscending ? ['24px', '32px', '24px'] : ['16px', '20px', '16px'],
+                                                }}
+                                                transition={{ repeat: Infinity, duration: 0.12, ease: "linear" }}
+                

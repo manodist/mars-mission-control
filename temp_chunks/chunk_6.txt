@@ -1,0 +1,26 @@
+nt-to-br from-purple-500/20 to-transparent border border-purple-500/30 flex items-center justify-center overflow-hidden">
+                                    <User className="w-10 h-10 text-purple-400" />
+                                </div>
+                                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-black rounded-full" />
+                            </div>
+                            <div className="flex-1">
+                                <label className="text-[8px] text-gray-500 font-black uppercase tracking-[0.2em] mb-1 block">대원 이름 (name)</label>
+                                <input
+                                    type="text"
+                                    value={rocketCustomization.astronautName}
+                                    onChange={(e) => onUpdateCustomization({ ...rocketCustomization, astronautName: e.target.value })}
+                                    title="Astronaut Name"
+                                    placeholder="이름을 입력하세요"
+                                    className="bg-transparent border-b border-purple-500/30 text-white font-black text-xl w-full focus:outline-none focus:border-purple-400 transition-colors uppercase tracking-tighter"
+                                />
+                                <p className="text-[10px] text-purple-400/60 font-medium mt-1 italic">"꿈을 향해 출발할 준비가 됐어요!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="glass-panel p-6 border-l-4 border-l-cyan-500">
+                        <div className="flex items-center gap-3 mb-6">
+                            <Gauge className="w-5 h-5 text-cyan-400" />
+                            <h3 className="text-sm font-black uppercase text-cyan-200 tracking-wider">기체 메인 시스템</h3>
+                        </div>
+                   

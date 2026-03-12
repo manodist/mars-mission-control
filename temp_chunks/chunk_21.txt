@@ -1,0 +1,24 @@
+wrap gap-4">
+                                    {COLORS.map(c => (
+                                        <button
+                                            key={c.value}
+                                            onClick={() => onUpdateCustomization({ ...rocketCustomization, color: c.value })}
+                                            className={`w-11 h-11 rounded-full border-2 transition-all transform hover:scale-110 relative group ${c.class} ${rocketCustomization.color === c.value ? 'border-white scale-110' : 'border-white/10'}`}
+                                        >
+                                            {rocketCustomization.color === c.value && (
+                                                <motion.div layoutId="color-ring" className="absolute -inset-2 border border-white/40 rounded-full animate-pulse" />
+                                            )}
+                                            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-[8px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">{c.name}</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Engine Selector */}
+                            <div className="mb-8">
+                                <label className="text-[9px] font-black text-gray-500 uppercase tracking-[0.3em] block mb-4">엔진 추진장치</label>
+                                <div className="grid grid-cols-1 gap-3">
+                                    {ENGINE_TYPES.map(engine => (
+                                        <button
+                                            key={engine.id}
+                                            onClick={() => onUpdateCustomization({ ...rocketCustomization, engineTyp

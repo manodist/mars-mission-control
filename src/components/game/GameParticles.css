@@ -1,0 +1,11 @@
+/* Game Particles Styles */
+.game-particle-item {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 20;
+    box-shadow: 0 0 4px currentColor;
+    will-change: left, top, transform, opacity;
+}

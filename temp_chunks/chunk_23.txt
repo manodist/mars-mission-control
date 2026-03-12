@@ -1,0 +1,32 @@
+ation, decal })}
+                                            className={`px-3 py-2 rounded-lg border text-[8px] font-black uppercase tracking-widest transition-all ${rocketCustomization.decal === decal ? 'bg-orange-500 border-orange-400 text-white' : 'bg-white/5 border-white/10 text-gray-500 hover:bg-white/10'}`}
+                                        >
+                                            {decal === 'DEEP' ? 'DEEP' :
+                                                decal === 'star' ? '별' :
+                                                    decal === 'skull' ? 'NASA' :
+                                                        decal === 'wing' ? '바람' :
+                                                            decal === 'mission' ? '마션' : decal}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Right sidebar and other sections are handled above */}
+            </main>
+
+
+            {/* Bottom Info Bar */}
+            < footer className="w-full max-w-6xl z-10 mt-8 pt-6 border-t border-white/5 flex flex-wrap gap-8 items-center justify-between" >
+                <div className="flex gap-12 items-center">
+                    <div className="flex items-center gap-3">
+                        <Thermometer className="w-4 h-4 text-gray-500" />
+                        <div>
+                            <p className="text-[8px] text-gray-500 uppercase font-black tracking-widest">Ambient Temp</p>
+                            <p className="text-xs font-mono font-bold text-green-400">22.4°C STABLE</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                        <div className="w-2

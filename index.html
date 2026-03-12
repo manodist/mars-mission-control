@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/inblanq.png" />
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('SW Registered!', reg))
+          .catch(err => console.log('SW Registration Failed!', err));
+      });
+    }
+  </script>
+
+  <title>DeepReading: 지구에서 달까지 | 딥독 융합 논술 게임</title>
+  <meta name="description"
+    content="딥독 융합 논술과 함께하는 우주 탐사 미션! 우주선을 조종하며 장애물을 피하고 미션을 완료하여 최고의 탐험가가 되어보세요. 문해력과 사고력을 키우는 에듀테크 게임." />
+  <meta name="keywords" content="딥독, 화성탐사, 에듀테크, 문해력, 논술게임, 퍼플온, 우주게임" />
+  <link rel="canonical" href="https://julesverne.vercel.app/" />
+
+  <!-- OpenGraph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://julesverne.vercel.app/" />
+  <meta property="og:title" content="DeepReading: 지구에서 달까지" />
+  <meta property="og:description" content="딥독 융합 논술과 함께하는 우주 탐사 미션! 최고의 우주 탐험가에 도전하세요." />
+  <meta property="og:image" content="https://julesverne.vercel.app/mars.jpg" />
+  <meta property="og:locale" content="ko_KR" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="DeepReading: 지구에서 달까지" />
+  <meta property="twitter:description" content="딥독 융합 논술과 함께하는 우주 탐사 미션!" />
+  <meta property="twitter:image" content="https://julesverne.vercel.app/mars.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Orbitron:wght@400;900&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

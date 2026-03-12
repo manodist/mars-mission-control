@@ -1,0 +1,42 @@
+import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Rocket, ChevronLeft, ChevronRight, Shield, Zap, Atom, BookOpen, Gauge, UserCheck, User, Settings, Thermometer, Star, Globe, Wind, Target } from 'lucide-react';
+import type { GameState, RocketCustomization } from '../../types/game';
+
+interface GameLaunchpadProps {
+    state: GameState;
+    onClose: () => void;
+    onUpdateCustomization: (custom: RocketCustomization) => void;
+    onLaunch: () => void;
+}
+
+const COLORS = [
+    { name: 'W-0 Zenith', value: '#f8fafc', class: 'rocket-color-zenith', textClass: 'rocket-text-zenith' },
+    { name: 'C-6 Cyber', value: '#06b6d4', class: 'rocket-color-cyber', textClass: 'rocket-text-cyber' },
+    { name: 'G-5 Emerald', value: '#10b981', class: 'rocket-color-emerald', textClass: 'rocket-text-emerald' },
+    { name: 'P-4 Nebula', value: '#a855f7', class: 'rocket-color-nebula', textClass: 'rocket-text-nebula' },
+    { name: 'P-1 Rose', value: '#f472b6', class: 'rocket-color-rose', textClass: 'rocket-text-rose' },
+];
+
+const DECALS = ['DEEP', 'star', 'skull', 'wing', 'mission'];
+const ENGINE_TYPES = [
+    { id: 'standard', label: '화력 엔진', icon: Zap, color: 'text-orange-400' },
+    { id: 'plasma', label: '플라즈마 엔진', icon: Atom, color: 'text-cyan-400' },
+    { id: 'nuclear', label: '원자력 엔진', icon: Shield, color: 'text-green-400' }
+];
+
+const KNOWLEDGE_PAGES = [
+    {
+        category: "STRUCTURE DESIGN",
+        title: "로켓의 구조와 설계",
+        subtitle: "효율적인 무게 관리: 다단 로켓",
+        content: "로켓은 발사대 구조물에서 솟아 오른 후 연료 탱크와 발사체를 단계별로 분리하며 무게를 줄이는 '다단 설계'를 사용합니다. 필요 없어진 부분을 버림으로써 적은 연료로 더 먼 우주까지 도달할 수 있습니다."
+    },
+    {
+        category: "LAUNCH PRINCIPLE",
+        title: "로켓 발사의 원리",
+        subtitle: "뉴턴의 제3법칙: 작용-반작용",
+        content: "로켓은 연료를 태워 가스를 아래로 강하게 뿜어내는 '작용'을 통해, 로켓을 반대 방향인 위로 밀어 올리는 '반작용'의 힘(추력)을 얻어 중력을 이겨내고 우주로 나아갑니다."
+    },
+    {
+       

@@ -1,0 +1,51 @@
+ category: "ORBITAL SCIENCE",
+        title: "발사 이후의 여정",
+        subtitle: "지구 탈출과 궤도 진입",
+        content: "지구 중력을 벗어나기 위해 시속 약 4만 km의 '탈출 속도'가 필요합니다. 궤도에 진입하면 공기 저항이 없는 우주에서 관성의 힘으로 지구 주위를 영원히 공전하게 됩니다."
+    },
+    {
+        category: "SPACE EVOLUTION",
+        title: "우주 과학의 미래 가치",
+        subtitle: "인류의 한계 확장과 지구 보호",
+        content: "우주 과학의 발전은 화성 이주와 같은 새로운 삶의 터전 탐구뿐만 아니라, 기상 관측과 자원 탐사 등 지구의 문제를 해결하는 핵심 기술이 됩니다. 끝없는 도전은 인류의 지평을 넓히는 가장 위대한 도약입니다."
+    },
+    {
+        category: "K-SPACE MISSION",
+        title: "대한민국의 우주 도전",
+        subtitle: "누리호에서 달, 그리고 화성까지",
+        content: "대한민국은 독자 기술로 개발한 '누리호' 발사 성공을 통해 세계 7대 우주 강국에 진입했습니다. 이제 2032년 달 착륙선 발사, 2045년 화성 탐사를 목표로 인류의 우주 개척 역사에 당당히 이름을 올리고 있습니다."
+    }
+];
+
+export const GameLaunchpad: React.FC<GameLaunchpadProps> = ({ state, onClose, onUpdateCustomization, onLaunch }) => {
+    const { rocketCustomization } = state;
+    const [countdown, setCountdown] = React.useState<number | null>(null);
+    const [isLaunching, setIsLaunching] = React.useState(false);
+    const [isAscending, setIsAscending] = React.useState(false);
+
+    const [fuelLevel, setFuelLevel] = React.useState(0);
+    const [oxLevel, setOxLevel] = React.useState(0);
+    const [currentKnowledgePage, setCurrentKnowledgePage] = React.useState(0);
+
+    React.useEffect(() => {
+        const fuelInterval = setInterval(() => {
+            setFuelLevel(prev => {
+                if (prev >= 100) {
+                    clearInterval(fuelInterval);
+                    return 100;
+                }
+                return prev + 1;
+            });
+        }, 20);
+
+        const oxInterval = setInterval(() => {
+            setOxLevel(prev => {
+                if (prev >= 100) {
+                    clearInterval(oxInterval);
+                    return 100;
+                }
+                return prev + 1;
+            });
+        }, 35);
+
+        return () => {

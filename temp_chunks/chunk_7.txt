@@ -1,0 +1,26 @@
+     <div className="space-y-6">
+                            <div>
+                                <div className="flex justify-between text-[10px] mb-2 font-black uppercase tracking-widest">
+                                    <span className="text-gray-400">연료 충전 상태 (Fuel)</span>
+                                    <span className="text-cyan-400 animate-pulse">{fuelLevel}% READY</span>
+                                </div>
+                                <div className="h-2 w-full bg-cyan-950 rounded-full overflow-hidden p-[1px] border border-cyan-500/20">
+                                    <motion.div
+                                        initial={{ width: 0 }}
+                                        animate={{ width: `${fuelLevel}% ` }}
+                                        transition={{ duration: 0.1 }}
+                                        className="h-full bg-gradient-to-r from-cyan-600 to-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.6)]"
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <div className="flex justify-between text-[10px] mb-2 font-black uppercase tracking-widest">
+                                    <span className="text-gray-400">생명 유지 장치 (OX)</span>
+                                    <span className="text-green-400 animate-pulse">{oxLevel}% OPTIMAL</span>
+                                </div>
+                                <div className="h-2 w-full bg-green-950 rounded-full overflow-hidden p-[1px] border border-green-500/20">
+                                    <motion.div
+                                        initial={{ width: 0 }}
+                                        animate={{ width: `${oxLevel}% ` }}
+                                        transition={{ duration: 0.1 }}
+                            

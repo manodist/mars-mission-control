@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dapper-valkyrie-78891c.netlify.app/sitemap.xml

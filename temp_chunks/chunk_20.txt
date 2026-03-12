@@ -1,0 +1,34 @@
+                      animate={{
+                                        scale: [1, 1.2],
+                                        opacity: [0.5, 0],
+                                    }}
+                                    transition={{
+                                        repeat: Infinity,
+                                        duration: 2,
+                                        ease: "easeOut",
+                                    }}
+                                    className="absolute inset-0 border-2 border-cyan-400/50 rounded-2xl pointer-events-none"
+                                />
+                            )}
+                        </motion.button>
+                    </div>
+                </section>
+
+                {/* Right Panel: Customization */}
+                <section className="flex flex-col h-full pb-12 order-2 lg:order-none">
+                    <div className="flex-1 flex flex-col justify-center mb-6">
+                        <div className="glass-panel p-6">
+                            <div className="flex items-center gap-3 mb-8">
+                                <Settings className="w-5 h-5 text-orange-400" />
+                                <h3 className="text-sm font-black uppercase text-orange-200 tracking-wider">우주선 커스텀 설정</h3>
+                            </div>
+
+                            {/* ... (rest of customization panel content remains same) ... */}
+
+                            {/* Color Selector */}
+                            <div className="mb-8">
+                                <label className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] block mb-4">
+                                    <span className="text-orange-500/80 mr-2">PAINT SCHEME</span>
+                                    나만의 색깔을 갖는 것이 중요해!
+                                </label>
+                                <div className="flex flex-

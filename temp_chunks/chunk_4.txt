@@ -1,0 +1,28 @@
+okOpen className="w-4 h-4 text-orange-400" />
+                                <h3 className="text-[10px] font-black uppercase text-orange-200 tracking-widest">{KNOWLEDGE_PAGES[currentKnowledgePage].category}</h3>
+                            </div>
+                            <div className="flex gap-1">
+                                {KNOWLEDGE_PAGES.map((_, idx) => (
+                                    <div
+                                        key={idx}
+                                        className={`w-1 h-1 rounded-full transition-all ${idx === currentKnowledgePage ? 'bg-orange-500 w-3' : 'bg-orange-500/20'}`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="flex-1 overflow-hidden relative">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={currentKnowledgePage}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -20 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="h-full"
+                                >
+                                    <h4 className="text-[12px] font-black text-white mb-1">{KNOWLEDGE_PAGES[currentKnowledgePage].title}</h4>
+                                    <p className="text-[10px] text-orange-400/80 font-bold mb-2 italic">"{KNOWLEDGE_PAGES[currentKnowledgePage].subtitle}"</p>
+                                    <p className="text-[11px] leading-relaxed text-gray-400 font-medium">
+                                        {KNOWLEDGE_PAGES[currentKnowledgePage].content}
+                                    </p

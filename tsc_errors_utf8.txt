@@ -1,0 +1,7 @@
+﻿src/pages/CosmicGame.tsx(72,7): error TS2304: Cannot find name 'setGameScale'.
+src/pages/CosmicGame.tsx(75,7): error TS2304: Cannot find name 'setGameScale'.
+src/pages/CosmicGame.tsx(679,22): error TS2304: Cannot find name 'gameScale'.
+src/pages/CosmicGame.tsx(689,47): error TS2304: Cannot find name 'gameScale'.
+src/pages/CosmicGame.tsx(702,36): error TS2304: Cannot find name 'gameScale'.
+src/pages/CosmicGame.tsx(1027,31): error TS2552: Cannot find name 'progress'. Did you mean 'onprogress'?
+src/pages/CosmicGame.tsx(1028,55): error TS2552: Cannot find name 'progress'. Did you mean 'onprogress'?

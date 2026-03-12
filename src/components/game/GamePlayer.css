@@ -1,0 +1,14 @@
+.rocket-tank {
+    background-color: var(--tank-bg, #f1f5f9);
+    border-color: var(--tank-border, #cbd5e1);
+}
+
+.rocket-booster {
+    background-color: var(--booster-bg, #f1f5f9);
+    border-color: var(--booster-border, #cbd5e1);
+}
+
+.rocket-body {
+    background-color: var(--body-bg, #f8fafc);
+    border-color: var(--body-border, #cbd5e1);
+}

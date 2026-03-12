@@ -1,0 +1,22 @@
+ssName="absolute top-20 w-full h-px bg-black/10" />
+                                    <div className="absolute top-40 w-full h-px bg-black/10" />
+                                    <div className="absolute top-60 w-full h-px bg-black/10" />
+
+                                    {/* LARGE Decal on the Orange Tank */}
+                                    {rocketCustomization.decal === 'DEEP' ? (
+                                        <div className="absolute top-[78%] left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40 filter drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                                            <span className="text-5xl sm:text-7xl font-black text-black tracking-tighter italic">DEEP</span>
+                                        </div>
+                                    ) : (
+                                        rocketCustomization.decal !== 'none' && (
+                                            <div className="absolute top-[78%] left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 filter drop-shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                                                {rocketCustomization.decal === 'star' && <Star className="w-32 h-32 sm:w-40 sm:h-40 text-black" />}
+                                                {rocketCustomization.decal === 'skull' && <Globe className="w-32 h-32 sm:w-40 sm:h-40 text-black" />}
+                                                {rocketCustomization.decal === 'wing' && <Wind className="w-32 h-32 sm:w-40 sm:h-40 text-black" />}
+                                                {rocketCustomization.decal === 'mission' && <Target className="text-black w-32 h-32 sm:w-40 sm:h-40" />}
+                                            </div>
+                                        )
+                                    )}
+                                </motion.div>
+
+                                {/* Payload Section (T

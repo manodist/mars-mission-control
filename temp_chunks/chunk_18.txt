@@ -1,0 +1,29 @@
+assName="absolute top-[45%] inset-x-0 flex justify-center z-[60]">
+                        <motion.button
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{
+                                opacity: 1,
+                                y: 0,
+                                scale: isLaunching ? 1 : [1, 1.1, 1],
+                                borderColor: isLaunching ? "rgba(55, 65, 81, 0.5)" : [
+                                    "rgba(34, 211, 238, 0.3)",
+                                    "rgba(34, 211, 238, 0.9)",
+                                    "rgba(34, 211, 238, 0.3)"
+                                ],
+                                boxShadow: isLaunching ? "0 0 0px rgba(34,211,238,0)" : [
+                                    "0 0 30px rgba(34,211,238,0.3)",
+                                    "0 0 60px rgba(34,211,238,0.8)",
+                                    "0 0 30px rgba(34,211,238,0.3)"
+                                ]
+                            }}
+                            transition={{
+                                opacity: { duration: 0.5 },
+                                y: { duration: 0.5 },
+                                scale: { repeat: Infinity, duration: 1.5, ease: "easeInOut" },
+                                borderColor: { repeat: Infinity, duration: 1.5, ease: "easeInOut" },
+                                boxShadow: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
+                            }}
+                            disabled={isLaunching}
+                            onClick={handleLaunchClick}
+                            className={`px-12 py-4 rounded-2xl font-black text-xl uppercase tracking-[0.3em] transition-all relative overflow-hidden group border-2 whitespace-nowrap ${isLaunching
+                                ? 'bg-gray-800/20 border-gray-700/50 text-gray-500 curso

@@ -1,0 +1,31 @@
+cale: [1, 1.2, 1],
+                                            opacity: [0.15, 0.25, 0.15]
+                                        }}
+                                        transition={{ repeat: Infinity, duration: 2 }}
+                                        className={`absolute top-0 left-1/2 -translate-x-1/2 w-40 h-32 rounded-full blur-[30px] ${rocketCustomization.engineType === 'plasma' ? 'bg-cyan-400' :
+                                            rocketCustomization.engineType === 'nuclear' ? 'bg-green-400' :
+                                                'bg-orange-500'
+                                            } `}
+                                    />
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                    <AnimatePresence>
+                        {countdown !== null && countdown >= 0 && (
+                            <motion.div
+                                initial={{ scale: 0.5, opacity: 0 }}
+                                animate={{ scale: 1.2, opacity: 1 }}
+                                exit={{ scale: 2, opacity: 0 }}
+                                key={countdown}
+                                className="absolute top-1/2 -translate-y-1/2 z-50 pointer-events-none flex items-center justify-center w-full"
+                            >
+                                <span className={`font-black text-white glow-text-orange drop-shadow-[0_0_50px_rgba(234,88,12,0.8)] italic ${countdown === 0 ? "text-8xl" : "text-9xl"}`}>
+                                    {countdown === 0 ? "LIFTOFF!" : countdown}
+                                </span>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    {/* LAUNCH BUTTON - OVERLAY IN FRONT OF ROCKET */}
+                    <div cl

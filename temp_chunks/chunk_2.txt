@@ -1,0 +1,44 @@
+            clearInterval(fuelInterval);
+            clearInterval(oxInterval);
+        };
+    }, []);
+
+    const handleLaunchClick = () => {
+        if (isLaunching) return;
+        setIsLaunching(true);
+        setCountdown(3); // Start from 3
+    };
+
+    React.useEffect(() => {
+        let timer: ReturnType<typeof setTimeout>;
+        if (countdown !== null) {
+            if (countdown >= 0) {
+                timer = setTimeout(() => setCountdown(countdown - 1), 1000);
+            } else {
+                // Start Ascending Sequence instead of immediate launch
+                setIsAscending(true);
+                // Call onLaunch after animation completes (roughly 7 seconds)
+                setTimeout(() => {
+                    onLaunch();
+                }, 3000);
+            }
+        }
+        return () => clearTimeout(timer);
+    }, [countdown, onLaunch]);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className="absolute inset-0 z-[60] flex flex-col items-center p-4 sm:p-8 bg-[#050508] overflow-y-auto overflow-x-hidden scrollbar-hide"
+        >
+            {/* Background Atmosphere */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute bottom-0 left-0 right-0 h-[60vh] bg-gradient-to-t from-orange-500/10 to-transparent blur-3xl opacity-50" />
+                {/* Earth Horizon */}
+                <div className="absolute bottom-[-30%] left-[-20%] right-[-20%] h-[80vh] rounded-t-[100%] bg-blue-900/10 border-t border-blue-400/20 shadow-[0_-20px_100px_rgba(59,130,246,0.05)]" />
+
+                {/* Launch Tower Grid */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-[200%] w-0.5 h-full bg-white/5" />
+                <div className="absolute bo

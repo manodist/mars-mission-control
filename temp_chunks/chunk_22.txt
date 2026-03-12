@@ -1,0 +1,23 @@
+e: engine.id as RocketCustomization['engineType'] })}
+                                            className={`px-5 py-4 rounded-xl border flex items-center gap-4 transition-all ${rocketCustomization.engineType === engine.id ? 'bg-white/10 border-white/30' : 'bg-transparent border-white/5 opacity-50 hover:bg-white/5 hover:opacity-80'}`}
+                                        >
+                                            <div className={`p-2 rounded-lg bg-black/40 ${engine.color}`}>
+                                                <engine.icon className="w-4 h-4" />
+                                            </div>
+                                            <div className="text-left">
+                                                <div className={`text-[10px] font-black uppercase tracking-widest ${rocketCustomization.engineType === engine.id ? 'text-white' : 'text-gray-400'}`}>{engine.label}</div>
+                                                <div className="text-[8px] font-bold text-gray-600">작동 상태: {rocketCustomization.engineType === engine.id ? '준비 완료' : '대기 중'}</div>
+                                            </div>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Decal Selector */}
+                            <div className="mb-4">
+                                <label className="text-[9px] font-black text-gray-500 uppercase tracking-[0.3em] block mb-4">MISSION DECAL (우주선 스티커)</label>
+                                <div className="flex flex-wrap gap-2">
+                                    {DECALS.map(decal => (
+                                        <button
+                                            key={decal}
+                                            onClick={() => onUpdateCustomization({ ...rocketCustomiz

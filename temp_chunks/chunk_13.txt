@@ -1,0 +1,17 @@
+op Fairing housing our inner rocket) */}
+                                <div className="relative w-40 sm:w-48 h-[280px] sm:h-[340px] flex flex-col items-center z-20 mt-[-20px]">
+                                    <div className="absolute inset-0 bg-transparent border-x-2 border-t-2 border-white/20 rounded-t-[100px] shadow-2xl overflow-hidden">
+                                        {/* Glass Viewport inside the Fairing to see our customizable rocket */}
+                                        <div className="absolute top-8 left-1/2 -translate-x-1/2 w-[85%] h-[65%] bg-transparent border border-white/10 rounded-t-[80px] rounded-b-2xl backdrop-blur-sm">
+                                            {/* THE GAME ROCKET (Visible inside the Fairing) */}
+                                            <div className="absolute inset-0 flex flex-col items-center justify-center pt-4 scale-90 sm:scale-100">
+                                                <div className="relative flex flex-col items-center">
+                                                    <div className="relative z-30 mb-[-10px] p-3 bg-white/10 backdrop-blur-md border border-white/30 rounded-t-full">
+                                                        <Rocket
+                                                            className={`w-16 h-16 sm:w-20 sm:h-20 -rotate-45 ${COLORS.find(c => c.value === rocketCustomization.color)?.textClass || ''}`}
+                                                        />
+                                                    </div>
+                                                    <div
+                                                        className="w-16 sm:w-20 h-28 sm:h-32 relative border-x border-white/20 rounded-b-lg shadow-xl bg-[#f8fafc]"
+                                                    >
+                                                        <div className="absolute 

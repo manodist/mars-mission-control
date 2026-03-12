@@ -1,0 +1,26 @@
+t-to-b from-orange-300 via-orange-500 to-red-600/10'
+                                                    } `}
+                                            />
+                                        </div>
+
+                                        {/* Right Sub Burner */}
+                                        <div className="relative w-8 h-20 opacity-70 scale-90">
+                                            <motion.div
+                                                animate={{
+                                                    height: isAscending ? [40, 100, 40] : [8, 20, 8],
+                                                    opacity: [0.6, 0.9, 0.6],
+                                                    width: isAscending ? ['24px', '32px', '24px'] : ['16px', '20px', '16px'],
+                                                }}
+                                                transition={{ repeat: Infinity, duration: 0.12, ease: "linear" }}
+                                                className={`absolute top-0 left-1/2 -translate-x-1/2 rounded-b-[100%] blur-[1px] z-10 origin-top ${rocketCustomization.engineType === 'plasma' ? 'bg-gradient-to-b from-cyan-300 via-cyan-500 to-blue-600/10' :
+                                                    rocketCustomization.engineType === 'nuclear' ? 'bg-gradient-to-b from-green-300 via-green-500 to-emerald-800/10' :
+                                                        'bg-gradient-to-b from-orange-300 via-orange-500 to-red-600/10'
+                                                    } `}
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Shared Diffusion Aura */}
+                                    <motion.div
+                                        animate={{
+                                            s

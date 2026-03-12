@@ -1,0 +1,13 @@
+ h-2 bg-green-500 rounded-full animate-pulse" />
+                        <div>
+                            <p className="text-[8px] text-gray-500 uppercase font-black tracking-widest">Comms Link</p>
+                            <p className="text-xs font-mono font-bold text-white">ESTABLISHED</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="hidden sm:block text-[9px] font-black text-white/20 uppercase tracking-[0.8em]">Antigravity Mission Control Alpha V4</div>
+            </footer >
+        </motion.div >
+    );
+};

@@ -1,0 +1,61 @@
+/* Game Bullets Styles */
+.game-bullet {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    z-index: 30;
+    pointer-events: none;
+    border-radius: 4px;
+}
+
+/* ───── Power Level 별 크기 & 색상 ───── */
+
+/* Lv.1: 좁고 짧은 청록 빔 */
+.game-bullet[data-power="1"] {
+    width: 3px;
+    height: 20px;
+    background: linear-gradient(to top, transparent, #22d3ee, #ffffff);
+    box-shadow: 0 0 6px #22d3ee, 0 0 12px #06b6d4;
+}
+
+/* Lv.2: 약간 더 굵고 긴 빔 */
+.game-bullet[data-power="2"] {
+    width: 4px;
+    height: 26px;
+    background: linear-gradient(to top, transparent, #22d3ee, #ffffff);
+    box-shadow: 0 0 8px #22d3ee, 0 0 16px #06b6d4;
+}
+
+/* Lv.3: 중형 에너지 빔 */
+.game-bullet[data-power="3"] {
+    width: 5px;
+    height: 34px;
+    background: linear-gradient(to top, transparent, #a78bfa, #ffffff);
+    box-shadow: 0 0 10px #a78bfa, 0 0 20px #7c3aed, 0 0 35px #06b6d4;
+}
+
+/* Lv.4: 강력한 플라즈마 빔 */
+.game-bullet[data-power="4"] {
+    width: 6px;
+    height: 42px;
+    background: linear-gradient(to top, transparent, #f472b6, #ffffff);
+    box-shadow: 0 0 12px #f472b6, 0 0 24px #db2777, 0 0 40px #a78bfa;
+}
+
+/* Lv.5: 최강 오버차지 빔 */
+.game-bullet[data-power="5"] {
+    width: 8px;
+    height: 52px;
+    background: linear-gradient(to top, transparent, #fbbf24, #ffffff);
+    box-shadow: 0 0 16px #fbbf24, 0 0 30px #f59e0b, 0 0 50px #ef4444, 0 0 70px #f97316;
+}
+
+.game-bullet-core {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 10%;
+    bottom: 0;
+    background-color: white;
+    filter: blur(1px);
+    opacity: 0.9;
+}

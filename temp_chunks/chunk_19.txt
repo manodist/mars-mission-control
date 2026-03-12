@@ -1,0 +1,35 @@
+r-not-allowed'
+                                : 'bg-cyan-500/10 backdrop-blur-3xl text-cyan-300 hover:border-cyan-300 hover:bg-cyan-400/20 hover:text-white active:scale-[0.95]'
+                                }`}
+                        >
+                            {isLaunching ? (
+                                <span className="flex items-center justify-center gap-4 animate-pulse">
+                                    <div className="w-5 h-5 border-2 border-cyan-500/30 border-t-cyan-400 rounded-full animate-spin" />
+                                    SYSTEM READY...
+                                </span>
+                            ) : (
+                                <span className="flex items-center justify-center gap-4">
+                                    <Rocket className="w-6 h-6 group-hover:translate-y-[-4px] transition-transform" />
+                                    발사 버튼
+                                </span>
+                            )}
+
+                            {/* Scanning light animation */}
+                            {!isLaunching && (
+                                <motion.div
+                                    animate={{
+                                        x: ['-100%', '200%'],
+                                    }}
+                                    transition={{
+                                        repeat: Infinity,
+                                        duration: 1.5,
+                                        ease: "linear",
+                                    }}
+                                    className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent skew-x-12"
+                                />
+                            )}
+
+                            {/* Constant pulse ring */}
+                            {!isLaunching && (
+                                <motion.div
+              
